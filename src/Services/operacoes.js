@@ -27,16 +27,18 @@ class ServicesOperacoes {
     Divisao(num1, num2) {
         if (isNaN(num1) || isNaN(num2)) {
             throw new Error('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+        }else if ((num1 == 0) || (num2 == 0)){
+            throw new Error('Não é possível dividir por 0')
         }
         const resultado = Number((Number(num1) / Number(num2)).toFixed(2))
         return resultado
     }
 
     Raiz(num1) {
-        if (isNaN(num1)) {
-            throw new Error('Apenas números possuem raiz quadrada')
+        if (isNaN(num1) || (num1 < 0)) {
+            throw new Error('Envie apenas número positivos')
         }
-        const resultado = Math.sqrt(num1)
+        const resultado = Number(Math.sqrt(num1).toFixed(2))
         return resultado
     }
 

@@ -247,3 +247,192 @@ describe('testando a operação subtrair: ', () => {
     })
 })
 
+describe('testando a multiplicação: ', () => {
+
+    it('Multiplicar dois números inteiros positivos', () => {
+        const resultado = Funcoes.Multiplicacao(2, 1)
+        expect(resultado).toBe(2)
+    })
+
+    it('Multiplicar um número positivo inteiro e um negativo inteiro', () => {
+        const resultado = Funcoes.Multiplicacao(3, -2)
+        expect(resultado).toBe(-6)
+    })
+
+    it('Multiplicar um número negativo inteiro e um  positivo inteiro', () => {
+        const resultado = Funcoes.Multiplicacao(-1, 2)
+        expect(resultado).toBe(-2)
+    })
+
+    it('Multiplicar um número com resultado negativo inteiro', () => {
+        const resultado = Funcoes.Multiplicacao(-4, 2)
+        expect(resultado).toBe(-8)
+    })
+
+    it('Multiplicar um número com resultado negativo inteiro em outra ordem', () => {
+        const resultado = Funcoes.Multiplicacao(-2, 4)
+        expect(resultado).toBe(-8)
+    })
+
+    it('Multiplicar um número e um 0', () => {
+        const resultado = Funcoes.Multiplicacao(2 , 0)
+        expect(resultado).toBe(0)
+    })
+
+    it('Multiplicar um 0 e um número', () => {
+        const resultado = Funcoes.Multiplicacao(0 , 2)
+        expect(resultado).toBe(0)
+    })
+
+    it('Multiplicar número e letra', () => {
+        const funMultiplicar = () => Funcoes.Multiplicacao(2 , 'a')
+        expect(funMultiplicar).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Multiplicar letra e número', () => {
+        const funMultiplicar = () => Funcoes.Multiplicacao('a' , 2)
+        expect(funMultiplicar).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Multiplicar número inteiro  e vazio', () => {
+        const funMultiplicar = () => Funcoes.Multiplicacao(2 , )
+        expect(funMultiplicar).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+    
+    it('Receber apenas um número', () => {
+        const funMultiplicar = () => Funcoes.Multiplicacao(2)
+        expect(funMultiplicar).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Multiplicar números grandes positivos', () => {
+        const resultado = Funcoes.Multiplicacao(2 , 20000000000)
+        expect(resultado).toBe(40000000000)
+    })
+
+    it('Multiplicar números grandes negativos', () => {
+        const resultado = Funcoes.Multiplicacao(-2 , 20000000000)
+        expect(resultado).toBe(-40000000000)
+    })
+
+    it('Multiplicando dois zeros', () => {
+        const resultado = Funcoes.Multiplicacao(0 , 0)
+        expect(resultado).toBe(0)
+    })
+
+    it('Multiplicando um número inteiro e um número com 2 decimais', () => {
+        const resultado = Funcoes.Multiplicacao(2 , 3.55)
+        expect(resultado).toBe(7.1)
+    })
+})
+
+describe('testando a divisão: ', () => {
+
+    it('Dividir dois números inteiros positivos', () => {
+        const resultado = Funcoes.Divisao(2, 1)
+        expect(resultado).toBe(2)
+    })
+
+    it('Dividir um número positivo inteiro e um negativo inteiro', () => {
+        const resultado = Funcoes.Divisao(3, -2)
+        expect(resultado).toBe(-1.5)
+    })
+
+    it('Dividir um número negativo inteiro e um  positivo inteiro', () => {
+        const resultado = Funcoes.Divisao(-1, 2)
+        expect(resultado).toBe(-0.5)
+    })
+
+    it('Dividir um número com resultado negativo inteiro', () => {
+        const resultado = Funcoes.Divisao(-4, 2)
+        expect(resultado).toBe(-2)
+    })
+
+    it('Dividir um número com resultado negativo inteiro em outra ordem', () => {
+        const resultado = Funcoes.Divisao(-2, 4)
+        expect(resultado).toBe(-0.5)
+    })
+
+    it('Dividir um número e um 0', () => {
+        const funDividir = () => Funcoes.Divisao(2 , 0)
+        expect(funDividir).toThrow('Não é possível dividir por 0')
+    })
+
+    it('Dividir um 0 e um número', () => {
+        const funDividir = () => Funcoes.Divisao(0 , 2)
+        expect(funDividir).toThrow('Não é possível dividir por 0')
+    })
+
+    it('Dividir número e letra', () => {
+        const funDividir = () => Funcoes.Divisao(2 , 'a')
+        expect(funDividir).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Dividir letra e número', () => {
+        const funDividir = () => Funcoes.Divisao('a' , 2)
+        expect(funDividir).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Dividir número inteiro  e vazio', () => {
+        const funDividir = () => Funcoes.Divisao(2 , )
+        expect(funDividir).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+    
+    it('Receber apenas um número', () => {
+        const funDividir = () => Funcoes.Divisao(2)
+        expect(funDividir).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Dividir números grandes positivos', () => {
+        const resultado = Funcoes.Divisao(2 , 20000000000)
+        expect(resultado).toBe(0) //Não é possível dividir números grandes dessa maneira, vou deixar o teste como lembrete
+    })
+
+    it('Dividir números grandes negativos', () => {
+        const resultado = Funcoes.Divisao(-2 , 20000000000)
+        expect(resultado).toBe(-0) //Não é possível dividir números grandes dessa maneira, vou deixar o teste como lembrete
+    })
+
+    it('Dividindo dois zeros', () => {
+        const funDividir = () => Funcoes.Divisao(0 , 0)
+        expect(funDividir).toThrow('Não é possível dividir por 0')
+    })
+
+    it('Dividindo um número inteiro e um número com 2 decimais', () => {
+        const resultado = Funcoes.Divisao(2 , 3.55)
+        expect(resultado).toBe(0.56)
+    })
+})
+
+describe('testando a raiz: ', () => {
+
+    it('Raiz de número inteiros positivos', () => {
+        const resultado = Funcoes.Raiz(25)
+        expect(resultado).toBe(5)
+    })
+
+    it('Raiz de um número inteiro negativo ', () => {
+        const funDividir = () => Funcoes.Raiz(-2)
+        expect(funDividir).toThrow('Envie apenas número positivos')
+    })
+
+    it('Raiz de 0', () => {
+        const resultado = Funcoes.Raiz(0)
+        expect(resultado).toBe(0)
+    })
+
+    it('Raiz de letra', () => {
+        const funDividir = () => Funcoes.Raiz('a')
+        expect(funDividir).toThrow('Envie apenas número positivos')
+    })
+
+    it('Raiz de vazio', () => {
+        const funDividir = () => Funcoes.Raiz()
+        expect(funDividir).toThrow('Envie apenas número positivos')
+    })
+
+    it('Raiz de números grandes positivos', () => {
+        const resultado = Funcoes.Raiz(20000000000)
+        expect(resultado).toBe(141421.36)
+    })
+
+})
