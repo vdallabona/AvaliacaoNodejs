@@ -444,9 +444,19 @@ describe('testando a potencia: ', () => {
         expect(resultado).toBe(8)
     })
 
-    it('Potência com um número inteiro negativo ', () => {
+    it('Potência com um número inteiro negativo na potência', () => {
         const resultado = Funcoes.Potencia(2 , -3)
         expect(resultado).toBe(0.13)
+    })
+    
+    it('Potência com um número inteiro negativo na base com uma potência ímpar', () => {
+        const resultado = Funcoes.Potencia(-2 , 3)
+        expect(resultado).toBe(-8)
+    })
+    
+    it('Potência com um número inteiro negativo na base com uma potência par', () => {
+        const resultado = Funcoes.Potencia(-2 , 4)
+        expect(resultado).toBe(16)
     })
 
     it('Potência de 0', () => {
@@ -468,5 +478,4 @@ describe('testando a potencia: ', () => {
         const resultado = Funcoes.Potencia(20000000000, 3)
         expect(resultado).toBe(8e+30)
     })
-
 })
