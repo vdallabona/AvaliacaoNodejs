@@ -43,10 +43,10 @@ class ServicesOperacoes {
     }
 
     Potencia(num1, num2) {
-        if (isNaN(num1)) {
+        if (isNaN(num1) || (num1 < 0) || isNaN(num2)) {
             throw new Error('É necessário que sejam enviados 2 números. Nem mais nem menos.')
         }
-        const resultado = num1 ** num2
+        const resultado = Number((Number(num1) ** Number(num2)).toFixed(2))
         return resultado
     }
     

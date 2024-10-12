@@ -436,3 +436,37 @@ describe('testando a raiz: ', () => {
     })
 
 })
+
+describe('testando a potencia: ', () => {
+
+    it('Potência de número inteiros positivos', () => {
+        const resultado = Funcoes.Potencia(2 , 3)
+        expect(resultado).toBe(8)
+    })
+
+    it('Potência com um número inteiro negativo ', () => {
+        const resultado = Funcoes.Potencia(2 , -3)
+        expect(resultado).toBe(0.13)
+    })
+
+    it('Potência de 0', () => {
+        const resultado = Funcoes.Potencia(0 , 0)
+        expect(resultado).toBe(1)
+    })
+
+    it('Potência de letra', () => {
+        const funDividir = () => Funcoes.Potencia('a')
+        expect(funDividir).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Potência de vazio', () => {
+        const funDividir = () => Funcoes.Potencia()
+        expect(funDividir).toThrow('É necessário que sejam enviados 2 números. Nem mais nem menos.')
+    })
+
+    it('Potência de números grandes positivos', () => {
+        const resultado = Funcoes.Potencia(20000000000, 3)
+        expect(resultado).toBe(8e+30)
+    })
+
+})
