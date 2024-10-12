@@ -55,6 +55,16 @@ class ControllersOperacoes {
             res.status(422).json({ resultado: e.message })
         }
     }
+    
+    Links(req, res) {
+        try {
+            const resultado = ServicesOperacoes.Links(req.body.conta)
+            res.status(201).json({ resultado: resultado })
+        } catch (e) {
+            res.status(422).json({ resultado: e.message })
+        }
+        
+    }
 }
 
 module.exports = new ControllersOperacoes()

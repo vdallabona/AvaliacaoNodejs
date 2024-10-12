@@ -9,5 +9,6 @@ router.post("/multiplicacao/", ControllersOperacoes.Multiplicacao)
 router.post("/divisao/", ControllersOperacoes.Divisao)
 router.post("/raiz/", ControllersOperacoes.Raiz)
 router.post("/potencia/", ControllersOperacoes.Potencia)
+router.get("/links/", ControllersOperacoes.Links)
 
 module.exports = router;
